@@ -14,7 +14,7 @@ DATABASES = {
         "HOST": "localhost",
         "PORT": 3306,
         "USER": "root",
-        "PASSWORD":"123456",
+        "PASSWORD":"DiegoTG2023IS",
         "NAME": "p1",
         "OPTIONS": {
             "init_command": "SET sql_mode='STRICT_TRANS_TABLES'",

@@ -4,9 +4,9 @@ import mysql.connector
 
 def generate_data():
     data = []
-    for i in range(100):
-        longitude = random.uniform(-77.2, -76.8)  # Coordenadas aproximadas de longitud de Lima
-        lat = random.uniform(-12.3, -11.9)  # Coordenadas aproximadas de latitud de Lima
+    for i in range(200):
+        longitude = random.uniform(-76.5707, -76.5044)  # Coordenadas aproximadas de longitud de Lima
+        lat = random.uniform(3.3951, 3.4625)  # Coordenadas aproximadas de latitud de Lima
         meter_serial = str(i + 1)  # Convertir a string
         efectivity = random.randint(50, 100)
         data.append((longitude, lat, meter_serial, efectivity))
@@ -14,9 +14,9 @@ def generate_data():
 
 
 connection = mysql.connector.connect(
-    host="localhost",
+    host="viewshine-heatmap-database.cuureygem86m.us-east-1.rds.amazonaws.com",
     user="root",
-    password="123456",
+    password="viewshine-heatmap-database-pass",
     database="p1"
 )
 cursor = connection.cursor()

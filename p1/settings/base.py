@@ -35,7 +35,8 @@ LOCAL_APPS = [
 THIRD_APPS = [
     'rest_framework',
     'project',
-    'MySQLdb'
+    'MySQLdb',
+    'corsheaders'
 ]
 
 #  https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -49,6 +50,8 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'corsheaders.middleware.CorsMiddleware',  
+    'django.middleware.common.CommonMiddleware',
 ]
 
 ROOT_URLCONF = "p1.urls"
@@ -108,6 +111,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
+
+CORS_ALLOWED_ORIGINS = [
+    'http://192.168.18.4:8081',
+    'http://localhost:8081'
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
